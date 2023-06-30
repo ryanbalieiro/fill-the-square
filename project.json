@@ -15,9 +15,9 @@
     "items"                 : {
         "consumable"        : {
             "boosts"        : [
-                {"id": "item-bomb", "name": "Bomb", "description": "Helps you destroy blocks!", "price": 600, "startAmount": 1},
+                {"id": "item-bomb", "name": "Bomb", "description": "Helps you destroy blocks!", "price": 500, "startAmount": 1},
                 {"id": "item-swap", "name": "Rotator", "description": "Rotates a piece by 90 degrees.", "price": 50, "startAmount": 1},
-                {"id": "item-piece", "name": "Single Block", "description": "A handy 1x1 tile to fill in gaps.", "price": 400, "startAmount": 1}
+                {"id": "item-piece", "name": "Single Block", "description": "A handy 1x1 tile to fill in gaps.", "price": 300, "startAmount": 1}
             ]
         },
 

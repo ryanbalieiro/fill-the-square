@@ -122,26 +122,42 @@ core.GameScene = cc.Scene.extend({
     _addEventListeners: function () {
         let self = this;
 
-        if(!cc.sys.isMobile) {
-            this._mouseEvent = cc.EventListener.create({
-                event: cc.EventListener.MOUSE,
-                onMouseDown: (event) => {self._onMouseDown(event)},
-                onMouseMove: (event) => {self._onMouseMove(event)},
-                onMouseUp: (event) => {self._onMouseUp(event)}
-            });
+        this._mouseEvent = cc.EventListener.create({
+            event: cc.EventListener.MOUSE,
+            onMouseDown: (event) => {
+                self._onMouseDown(event);
+                return true;
+            },
+            onMouseMove: (event) => {
+                self._onMouseMove(event);
+                return true;
+            },
+            onMouseUp: (event) => {
+                self._onMouseUp(event);
+                return true;
+            }
+        });
 
-            cc.eventManager.addListener(this._mouseEvent, this);
-        }
-        else {
-            this._touchEvent = cc.EventListener.create({
-                event: cc.EventListener.TOUCH_ONE_BY_ONE,
-                onTouchBegan: (touch,event) => {if(touch.getID() === 0) {self._onMouseDown(touch); return true;}},
-                onTouchMoved: (touch,event) => {if(touch.getID() === 0) {self._onMouseMove(touch); return true;}},
-                onTouchEnded: (touch,event) => {if(touch.getID() === 0) {self._onMouseUp(touch); return true;}}
-            });
+        this._touchEvent = cc.EventListener.create({
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: true,
 
-            cc.eventManager.addListener(this._touchEvent, this);
-        }
+            onTouchBegan: (touch,event) => {
+                self._onMouseDown(touch);
+                return true;
+            },
+            onTouchMoved: (touch,event) => {
+                self._onMouseMove(touch);
+                return true;
+            },
+            onTouchEnded: (touch,event) => {
+                self._onMouseUp(touch);
+                return true;
+            }
+        });
+
+        cc.eventManager.addListener(this._mouseEvent, this);
+        cc.eventManager.addListener(this._touchEvent, this);
     },
 
     /**
