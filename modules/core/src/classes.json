@@ -1,0 +1,77 @@
+[
+  "src/apis/NativeViewport.js",
+
+  "src/capabilities/DisplayState.js",
+  "src/capabilities/HitTestChecker.js",
+  "src/capabilities/Notifier.js",
+
+  "src/constants/Resources.js",
+
+  "src/helpers/ActionHelpers.js",
+  "src/helpers/ArrayHelpers.js",
+  "src/helpers/ColorHelpers.js",
+  "src/helpers/LayoutHelpers.js",
+  "src/helpers/MathHelpers.js",
+  "src/helpers/StringHelpers.js",
+
+  "src/loaders/ResourceLoader.js",
+
+  "src/managers/AudioManager.js",
+  "src/managers/GameManager.js",
+  "src/managers/TutorialManager.js",
+  "src/managers/UserManager.js",
+
+  "src/models/AchievementModel.js",
+  "src/models/DebugOptions.js",
+  "src/models/ItemModel.js",
+  "src/models/ItemCollectionModel.js",
+  "src/models/ItemWalletModel.js",
+
+  "src/views/GameScene.js",
+  "src/views/GameViewEvent.js",
+
+  "src/views/extensions/Sprite.js",
+  "src/views/extensions/InteractiveNode.js",
+  "src/views/extensions/Label.js",
+
+  "src/views/feedbacks/AnimatedText.js",
+  "src/views/feedbacks/Burst.js",
+  "src/views/feedbacks/Hand.js",
+  "src/views/feedbacks/Magnet.js",
+
+  "src/views/layers/generics/InteractiveLayer.js",
+  "src/views/layers/generics/ResponsiveLayer.js",
+  "src/views/layers/GameLayer.js",
+  "src/views/layers/HudLayer.js",
+  "src/views/layers/PopUpLayer.js",
+
+  "src/views/popups/generics/PopUpNode.js",
+  "src/views/popups/generics/PopUpMessage.js",
+  "src/views/popups/generics/PopUpBoard.js",
+  "src/views/popups/AchievementsWindow.js",
+  "src/views/popups/Alert.js",
+  "src/views/popups/ConfirmationWindow.js",
+  "src/views/popups/GameOverWindow.js",
+  "src/views/popups/PauseBar.js",
+  "src/views/popups/Shop.js",
+  "src/views/popups/StatsWindow.js",
+
+  "src/views/ui/generics/Button.js",
+  "src/views/ui/generics/SpriteButton.js",
+  "src/views/ui/badges/AchievementBadge.js",
+  "src/views/ui/badges/AmountBadge.js",
+  "src/views/ui/cards/AchievementCard.js",
+  "src/views/ui/cards/ShopItemCard.js",
+  "src/views/ui/cards/StatsCard.js",
+  "src/views/ui/components/ItemButton.js",
+  "src/views/ui/components/LongButton.js",
+  "src/views/ui/components/ProgressBar.js",
+  "src/views/ui/components/Toast.js",
+  "src/views/ui/hud/ActionHud.js",
+  "src/views/ui/hud/CoinHud.js",
+  "src/views/ui/hud/BoostsHud.js",
+  "src/views/ui/hud/OptionsHud.js",
+  "src/views/ui/hud/ScoreHud.js",
+
+  "src/GameDelegate.js"
+]

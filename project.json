@@ -1,0 +1,48 @@
+{
+    "debugMode"             : 1,
+    "frameRate"             : 60,
+    "id"                    : "gameCanvas",
+    "renderMode"            : 1,
+    "showFPS"               : false,
+
+    "title"                 : "Fill The Square",
+    "namespace"             : "fts",
+    "delegateClass"         : "FillTheSquareDelegate",
+
+    "coreRootPath"          : "modules/core",
+    "gameRootPath"          : "modules/fillthesquare",
+
+    "items"                 : {
+        "consumable"        : {
+            "boosts"        : [
+                {"id": "item-bomb", "name": "Bomb", "description": "Helps you destroy blocks!", "price": 600, "startAmount": 1},
+                {"id": "item-swap", "name": "Rotator", "description": "Rotates a piece by 90 degrees.", "price": 50, "startAmount": 1},
+                {"id": "item-piece", "name": "Single Block", "description": "A handy 1x1 tile to fill in gaps.", "price": 400, "startAmount": 1}
+            ]
+        },
+
+        "selectable"        : {
+            "themes"        : [
+                {"id": "theme-dark", "name": "Dark", "description": "Stylishly bold with a dark ambiance.", "price": 0},
+                {"id": "theme-purple", "name": "Purple", "description": "Elegantly adorned in vibrant purple shades.", "price": 3000},
+                {"id": "theme-blue", "name": "Celestial", "description": "Illuminated with a bright & airy atmosphere.", "price": 5000}
+            ]
+        }
+    },
+
+    "achievementBreakpoints": {
+        "score": [50, 100, 150, 200, 250, 300, 350, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000, 12500, 15000, 17500, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 75000, 100000],
+        "coins": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2250, 2500, 2750, 3000, 3250, 3500, 3750, 4000, 4250, 4500, 4750, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 11000, 12000, 13000, 14000, 15000, 17500, 20000, 30000, 40000, 50000, 75000, 100000, 200000, 500000, 1000000, 2000000],
+        "matches": [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 250000, 500000],
+        "features": [100]
+    },
+
+    "hashtag"               : "fillthesquare",
+    "url"                   : "https://ryanbalieiro.github.io/fill-the-square",
+    "privacyPolicyUrl"      : "https://ryanbalieiro.com/games/fill-the-square/privacy-policy",
+
+    "debugFlags"  : {
+        "ignorePersistence" : false,
+        "skipIntro"         : false
+    }
+}

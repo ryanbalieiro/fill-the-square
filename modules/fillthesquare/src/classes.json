@@ -1,0 +1,18 @@
+[
+  "src/FillTheSquareDelegate.js",
+
+  "src/constants/Resources.js",
+
+  "src/managers/FillTheSquareGameManager.js",
+  "src/managers/FillTheSquareTutorialManager.js",
+
+  "src/models/PieceGenerator.js",
+  "src/models/PieceModel.js",
+  "src/models/TileGridModel.js",
+
+  "src/views/FillTheSquareLayer.js",
+  "src/views/components/Piece.js",
+  "src/views/components/PieceBoard.js",
+  "src/views/components/Tile.js",
+  "src/views/components/TileGrid.js"
+]
