@@ -73,10 +73,10 @@ core.InteractiveLayer = cc.Layer.extend({
      * @return {Boolean}
      */
     onMouseDown: function (event) {
+        this._updateMouseCoords(event);
         if(this.status !== core.InteractiveLayer.InteractionStatus.ENABLED)
             return false;
 
-        this._updateMouseCoords(event);
         for(let i = 0 ; i < this._interactiveNodes.length ; i++) {
             let interactiveNode = this._interactiveNodes[i];
             interactiveNode.onMouseDown(event);
@@ -109,10 +109,10 @@ core.InteractiveLayer = cc.Layer.extend({
      * @return {Boolean}
      */
     onMouseUp: function (event) {
+        this._updateMouseCoords(event);
         if(this.status !== core.InteractiveLayer.InteractionStatus.ENABLED)
             return false;
 
-        this._updateMouseCoords(event);
         for(let i = 0 ; i < this._interactiveNodes.length ; i++) {
             let interactiveNode = this._interactiveNodes[i];
             interactiveNode.onMouseUp(event);

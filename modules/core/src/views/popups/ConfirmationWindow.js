@@ -66,6 +66,12 @@ core.ConfirmationWindow = core.PopUpMessage.extend({
             this._confirmButton.setPosition(0, -200);
             this.buttons.push(this._confirmButton);
         }
+
+        if(core.ConfirmationWindow.isFirst) {
+            for(let i = 0 ; i < this.buttons.length ; i++) {
+                this.buttons[i].setSoundUrl(null);
+            }
+        }
     },
 
     /**
@@ -105,10 +111,17 @@ core.ConfirmationWindow = core.PopUpMessage.extend({
         else if(button === this._denyButton && this._denyEvent) {
             this.sceneNotifier.dispatch(this._denyEvent);
         }
+
+        core.ConfirmationWindow.isFirst = false;
     },
 
     /**
      * @override
      */
     destroy: function () {}
-})
+});
+
+/**
+ * @type {boolean}
+ */
+core.ConfirmationWindow.isFirst = true;

@@ -270,13 +270,18 @@ fts.FillTheSquareLayer = core.GameLayer.extend({
         this._super();
 
         if(this._draggingObject === this._pieceDragFeedback) {
-            this._tileGrid.updatePiecePreview(this._pieceDragFeedback);
             if(cc.sys.capabilities.touches) {
                 this._draggingObject.setPosition(this._touchCoords.x - 120, this._touchCoords.y + 120);
             }
+
+            this._tileGrid.updatePiecePreview(this._pieceDragFeedback);
         }
 
         else if(this._draggingObject === this._itemDragFeedback) {
+            if(cc.sys.capabilities.touches) {
+                this._draggingObject.setPosition(this._touchCoords.x - 60, this._touchCoords.y + 60);
+            }
+
             this._tileGrid.updateItemPreview(this._itemDragFeedback);
             this._pieceBoard.updateItemPreview(this._itemDragFeedback);
         }
