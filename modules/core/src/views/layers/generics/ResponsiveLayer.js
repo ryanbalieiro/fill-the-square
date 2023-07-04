@@ -40,6 +40,7 @@ core.ResponsiveLayer = core.InteractiveLayer.extend({
      * @param {Number} dt
      */
     update: function (dt) {
+        this._super(dt);
         this._checkViewPortSize();
     },
 
@@ -75,6 +76,13 @@ core.ResponsiveLayer = core.InteractiveLayer.extend({
                 target.setLocalZOrder(target.__savedZOrder);
             }
         }
+    },
+
+    /**
+     * @return {cc.LayerColor._visible|boolean}
+     */
+    hasFocus: function () {
+        return this.isVisible() && this._lyrBackdrop.isVisible();
     },
 
     /**

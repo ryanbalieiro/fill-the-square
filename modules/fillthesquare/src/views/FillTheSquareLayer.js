@@ -271,6 +271,9 @@ fts.FillTheSquareLayer = core.GameLayer.extend({
 
         if(this._draggingObject === this._pieceDragFeedback) {
             this._tileGrid.updatePiecePreview(this._pieceDragFeedback);
+            if(cc.sys.capabilities.touches) {
+                this._draggingObject.setPosition(this._touchCoords.x - 120, this._touchCoords.y + 120);
+            }
         }
 
         else if(this._draggingObject === this._itemDragFeedback) {

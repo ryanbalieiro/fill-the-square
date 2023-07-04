@@ -7,11 +7,16 @@ core.ResourceLoader = cc.Class.extend({
     /** @type {core.Notifier} **/
     notifier:null,
 
+    /** @type {core.AudioManager} **/
+    audioManager: null,
+
     /**
      * @constructs
+     * @param {core.AudioManager} audioManager
      */
-    ctor: function () {
+    ctor: function (audioManager) {
         this.notifier = new core.Notifier();
+        this.audioManager = audioManager;
     },
 
     /**
@@ -35,6 +40,7 @@ core.ResourceLoader = cc.Class.extend({
             }
         }
 
+        let audioManager = this.audioManager;
         cc.loader.load(filePaths, function () {}, function () {
             for(let i in plistEnum) {
                 cc.spriteFrameCache.addSpriteFrames(plistEnum[i]);
@@ -42,7 +48,7 @@ core.ResourceLoader = cc.Class.extend({
 
             for(let i in soundsEnum) {
                 if(soundsEnum[i].lastIndexOf("sfx") !== -1) {
-                    cc.audioEngine.preloadEffect(soundsEnum[i]);
+                    audioManager.preloadEffect(soundsEnum[i]);
                 }
             }
 

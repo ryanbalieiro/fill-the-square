@@ -93,7 +93,13 @@ core.BoostsHud = core.InteractiveNode.extend({
             if(amountOwned > 0) {
                 let button = this._boostButtons[buttonIndex];
                 button.setItemModel(this._items[i]);
-                button.targetState.position = new cc.Point(this._btnToggle.x, this._btnToggle.y + 120 + buttonIndex*110);
+
+                if(core.layoutHelpers.isSmOrLower()) {
+                    button.targetState.position = new cc.Point(this._btnToggle.x + 120 + buttonIndex*110, this._btnToggle.y + 5);
+                }
+                else {
+                    button.targetState.position = new cc.Point(this._btnToggle.x, this._btnToggle.y + 120 + buttonIndex*110);
+                }
                 button.setBadgeValue(amountOwned);
                 if(this._isExpanded) {
                     button.setPosition(button.targetState.position);

@@ -10,6 +10,9 @@ core.AudioManager = cc.Class.extend({
     /** @type {Boolean} **/
     _audioContextActivated: false,
 
+    /** @type {String[]} **/
+    _effectsToPreload: null,
+
     /** @type {Boolean} **/
     _musicEnabled: true,
 
@@ -46,6 +49,12 @@ core.AudioManager = cc.Class.extend({
     setAudioContextActivated: function () {
         this._audioContextActivated = true;
         this._updateBgmStatus();
+
+        if(this._effectsToPreload) {
+            for(let i = 0 ; i < this._effectsToPreload.length ; i++) {
+                this.preloadEffect(this._effectsToPreload[i]);
+            }
+        }
     },
 
     /**
@@ -102,6 +111,19 @@ core.AudioManager = cc.Class.extend({
     stopBgm: function () {
         this._currentBgmUrl = null;
         this._updateBgmStatus();
+    },
+
+    /**
+     * @param {String|*} url
+     */
+    preloadEffect: function (url) {
+        if(this._audioContextActivated) {
+            cc.audioEngine.preloadEffect(url);
+        }
+        else {
+            this._effectsToPreload = this._effectsToPreload || [];
+            this._effectsToPreload.push(url);
+        }
     },
 
     /**

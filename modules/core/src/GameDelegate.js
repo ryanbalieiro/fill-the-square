@@ -51,11 +51,11 @@ core.GameDelegate = cc.Class.extend({
      * @public
      */
     init: function () {
-        this.resourceLoader = new core.ResourceLoader();
         this.audioManager = new core.AudioManager();
         this.userManager = new core.UserManager();
         this.debugOptions = new core.DebugOptions();
 
+        this.resourceLoader = new core.ResourceLoader(this.audioManager);
         this.resourceLoader.notifier.addSubscription(this, this._onCoreResourcesLoaded);
         this.resourceLoader.preload(cc.game.config['coreRootPath'], null, core.Pngs, core.Fonts, core.Sounds);
     },

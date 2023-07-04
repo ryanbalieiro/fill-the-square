@@ -140,8 +140,8 @@ core.InteractiveLayer = cc.Layer.extend({
         this._draggingObject = node;
         this._draggingObject.cleanup();
         this._draggingObject.setLocalZOrder(99);
-        this._draggingObject.setPosition(this._touchCoords);
         this._draggingObject.setVisible(true);
+        this.updateDrag();
     },
 
     /**

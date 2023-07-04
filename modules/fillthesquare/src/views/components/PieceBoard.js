@@ -156,7 +156,7 @@ fts.PieceBoard = core.InteractiveNode.extend({
     getTouchedPiece: function (globalCoords) {
         for(let i = 0 ; i < this._pieces.length ; i++) {
             let piece = this._pieces[i];
-            if(piece.hitTestChecker.contains(globalCoords, 10)) {
+            if(piece.hitTestChecker.contains(globalCoords, 70)) {
                 this._lastSelectedPiece = piece;
                 return piece;
             }
@@ -235,7 +235,9 @@ fts.PieceBoard = core.InteractiveNode.extend({
      */
     canDraggingItemBeUsed: function (itemButton) {
         let targetPiece = this.getTouchedPiece(itemButton.getPosition());
-        return targetPiece && !targetPiece.getModel().isSquare();
+        let itemModel = itemButton.getItemModel();
+
+        return targetPiece && !targetPiece.getModel().isSquare() && itemModel.getId() === fts.FillTheSquareGameManager.Items.ROTATOR;
     },
 
     /**

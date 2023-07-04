@@ -156,8 +156,12 @@ core.GameScene = cc.Scene.extend({
             }
         });
 
-        cc.eventManager.addListener(this._mouseEvent, this);
-        cc.eventManager.addListener(this._touchEvent, this);
+        if(cc.sys.capabilities.touches) {
+            cc.eventManager.addListener(this._touchEvent, this);
+        }
+        else {
+            cc.eventManager.addListener(this._mouseEvent, this);
+        }
     },
 
     /**
