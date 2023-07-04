@@ -153,6 +153,7 @@ core.BoostsHud = core.InteractiveNode.extend({
         this.sceneNotifier.dispatch(core.GameViewEvent.Types.PLAY_EFFECT, core.Sounds.SFX_EXPAND);
         this._isExpanded = true;
         this._setFocus(true);
+        this.sceneNotifier.dispatch(core.GameViewEvent.Types.EXPANDED_ITEM_BAG);
 
         for(let i = 0 ; i < this._boostButtons.length ; i++) {
             let button = this._boostButtons[i];
@@ -184,6 +185,7 @@ core.BoostsHud = core.InteractiveNode.extend({
 
         this._isExpanded = false;
         this._setFocus(false);
+        this.sceneNotifier.dispatch(core.GameViewEvent.Types.SHRANK_ITEM_BAG);
 
         if(animated) {
             this.sceneNotifier.dispatch(core.GameViewEvent.Types.PLAY_EFFECT, core.Sounds.SFX_SHRINK);

@@ -154,6 +154,8 @@ core.GameDelegate = cc.Class.extend({
             case core.GameViewEvent.Types.CLICKED_ON_SHARE_GAME:            this._shareGame(); break;
             case core.GameViewEvent.Types.CLICKED_ON_SHARE_SCORE:           this._shareScore(parameter); break;
             case core.GameViewEvent.Types.FORCE_HIDE_FEEDBACKS:             this._forceHideFeedbacks(); break;
+            case core.GameViewEvent.Types.EXPANDED_ITEM_BAG:                this._onItemBagExpanded(); break;
+            case core.GameViewEvent.Types.SHRANK_ITEM_BAG:                  this._onItemBagShrunk(); break;
         }
     },
 
@@ -452,6 +454,20 @@ core.GameDelegate = cc.Class.extend({
      */
     _forceHideFeedbacks: function () {
         this._gameScene.getHudLayer().forceHideAllFeedbacks();
+    },
+
+    /**
+     * @private
+     */
+    _onItemBagExpanded: function () {
+        this._gameScene.getGameLayer().disable();
+    },
+
+    /**
+     * @private
+     */
+    _onItemBagShrunk: function () {
+        this._gameScene.getGameLayer().enable();
     },
 
     /**

@@ -46,5 +46,8 @@ core.GameViewEvent.Types = {
     GAME_OVER: "gameSceneEventGameOver",
 
     TOGGLED_MUSIC_ENABLED: "gameSceneEventToggledMusicEnabled",
-    TOGGLED_SFX_ENABLED: "gameSceneEventToggledSfxEnabled"
+    TOGGLED_SFX_ENABLED: "gameSceneEventToggledSfxEnabled",
+
+    EXPANDED_ITEM_BAG: "gameSceneEventExpandedItemBag",
+    SHRANK_ITEM_BAG: "gameSceneEventShrankItemBag"
 };
