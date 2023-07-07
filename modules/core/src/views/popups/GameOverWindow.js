@@ -170,7 +170,7 @@ core.GameOverWindow = core.PopUpBoard.extend({
 
             cc.delayTime(0.3),
             cc.callFunc(function () {
-                this.sceneNotifier.dispatch(core.GameViewEvent.Types.RESUME_BGM, fts.Sounds.BGM_GAME_OVER);
+                this.sceneNotifier.dispatch(core.GameViewEvent.Types.GAME_OVER_ANIMATION_COMPLETE);
                 this._btnClose.setVisible(true);
                 this._btnClose.setScale(1.5);
                 this._btnClose.runAction(cc.scaleTo(0.3, 1, 1).easing(cc.easeBackOut()));

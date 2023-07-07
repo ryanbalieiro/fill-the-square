@@ -44,6 +44,7 @@ core.GameViewEvent.Types = {
     REQUESTED_RESTART: "gameSceneEventRestartedGame",
     REQUESTED_RESUME: "gameSceneEventResumedGame",
     GAME_OVER: "gameSceneEventGameOver",
+    GAME_OVER_ANIMATION_COMPLETE: "gameSceneEventGameOverAnimationComplete",
 
     TOGGLED_MUSIC_ENABLED: "gameSceneEventToggledMusicEnabled",
     TOGGLED_SFX_ENABLED: "gameSceneEventToggledSfxEnabled",

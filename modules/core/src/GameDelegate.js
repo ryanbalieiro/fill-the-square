@@ -160,7 +160,6 @@ core.GameDelegate = cc.Class.extend({
     },
 
     /**
-     * @virtual
      * @private
      */
     _onFirstTouch: function () {

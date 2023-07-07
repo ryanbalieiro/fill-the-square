@@ -18,10 +18,11 @@ cc.game.onStart = function () {
     if (sys.isMobile &&
         sys.browserType !== sys.BROWSER_TYPE_BAIDU &&
         sys.browserType !== sys.BROWSER_TYPE_WECHAT) {
-        cc.view.enableAutoFullScreen(true);
+        cc.view.enableAutoFullScreen(false);
     }
 
     cc.view.adjustViewPort(true);
+    cc.view.enableRetina(true);
     cc.view.setDesignResolutionSize(2048, 1532, cc.ResolutionPolicy.FIXED_HEIGHT);
     cc.view.resizeWithBrowserSize(true);
 
@@ -30,8 +31,8 @@ cc.game.onStart = function () {
         classLoader.loadAllClasses(function () {
             let namespace = eval(cc.game.config['namespace']);
             let delegateClass = cc.game.config['delegateClass'];
-            delegate = new namespace[delegateClass]();
-            delegate.init();
+            core.__delegate = new namespace[delegateClass]();
+            core.__delegate.init();
         });
     });
 }

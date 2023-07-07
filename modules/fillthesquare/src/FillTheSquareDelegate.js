@@ -66,6 +66,10 @@ fts.FillTheSquareDelegate = core.GameDelegate.extend({
         this._super(event, parameter);
 
         switch(event) {
+            case core.GameViewEvent.Types.GAME_OVER_ANIMATION_COMPLETE:
+                this._onGameOverAnimationComplete();
+                break;
+
             case fts.FillTheSquareLayer.Events.PLACED_PIECE:
                 this._onPiecePlaced(parameter.model, parameter.i, parameter.j, parameter.position);
                 break;
@@ -94,6 +98,13 @@ fts.FillTheSquareDelegate = core.GameDelegate.extend({
                 this._onGameOver();
                 break;
         }
+    },
+
+    /**
+     * @private
+     */
+    _onGameOverAnimationComplete: function () {
+        this.audioManager.changeBgm(fts.Sounds.BGM_GAME_OVER);
     },
 
     /**
