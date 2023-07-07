@@ -270,8 +270,11 @@ fts.FillTheSquareLayer = core.GameLayer.extend({
         this._super();
 
         if(this._draggingObject === this._pieceDragFeedback) {
+
             if(cc.sys.capabilities.touches) {
-                this._draggingObject.setPosition(this._touchCoords.x - 120, this._touchCoords.y + 120);
+                let offset = fts.Tile.SPACING*this._pieceDragFeedback.getScaleX()/2;
+                let bounds = this._pieceDragFeedback.hitTestChecker.getCachedWorldBoundingBox(0);
+                this._draggingObject.setPosition(this._touchCoords.x - bounds.width/2 - offset, this._touchCoords.y + bounds.height/2 + offset);
             }
 
             this._tileGrid.updatePiecePreview(this._pieceDragFeedback);

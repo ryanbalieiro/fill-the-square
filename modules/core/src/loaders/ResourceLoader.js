@@ -46,11 +46,14 @@ core.ResourceLoader = cc.Class.extend({
                 cc.spriteFrameCache.addSpriteFrames(plistEnum[i]);
             }
 
+            cc.audioEngine.setEffectsVolume(0);
             for(let i in soundsEnum) {
                 if(soundsEnum[i].lastIndexOf("sfx") !== -1) {
                     audioManager.preloadEffect(soundsEnum[i]);
+                    audioManager.playEffect(soundsEnum[i]);
                 }
             }
+            cc.audioEngine.setEffectsVolume(1);
 
             notifier.dispatch(core.ResourceLoader.Events.LOADED);
         });
