@@ -117,17 +117,27 @@ core.GameOverWindow = core.PopUpBoard.extend({
     },
 
     /**
+     * @public
+     */
+    onParentLayerResize: function () {
+        this._super();
+        if(!this._isAnimationComplete) {
+            this._onTweenInComplete();
+        }
+    },
+
+    /**
      * @private
      */
     _onTweenInComplete: function () {
         this.setOpacity(255);
 
-        let score = this.gameManager.getScore();
-        let scoreAnimationDuration = core.mathHelpers.clamp(score, 1, 10)/10;
-        let scoreAnimationSoundIterations = core.mathHelpers.clamp(score, 1, 8);
+        this._score = this._score || this.gameManager.getScore();
+        let scoreAnimationDuration = core.mathHelpers.clamp(this._score, 1, 10)/10;
+        let scoreAnimationSoundIterations = core.mathHelpers.clamp(this._score, 1, 8);
 
-        this._scoreHud.setScore(score, scoreAnimationDuration);
-        if(score > 0) {
+        this._scoreHud.setScore(this._score, scoreAnimationDuration);
+        if(this._score > 0) {
             this.runAction(cc.repeat(cc.sequence(
                 cc.callFunc(function () {
                     this.sceneNotifier.dispatch(core.GameViewEvent.Types.PLAY_EFFECT, core.Sounds.SFX_SCORE_COUNTER_SOFT);
@@ -180,6 +190,7 @@ core.GameOverWindow = core.PopUpBoard.extend({
             cc.delayTime(0.3),
             cc.callFunc(function () {
                 this.getInteractiveLayer().unlock();
+                this._isAnimationComplete = true;
             }, this)
         ))
     },

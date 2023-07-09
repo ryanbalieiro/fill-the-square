@@ -135,6 +135,15 @@ core.GameLayer = core.ResponsiveLayer.extend({
     },
 
     /**
+     * @public
+     * @override
+     */
+    cancelDrag: function () {
+        this._cancelDraggingItemUse();
+        this._super();
+    },
+
+    /**
      * @protected
      */
     _cancelDraggingItemUse: function () {
@@ -155,7 +164,9 @@ core.GameLayer = core.ResponsiveLayer.extend({
             ));
         }
         else {
-            this.cancelDrag();
+            this._draggingObject.cleanup();
+            this._draggingObject.setVisible(false);
+            this._draggingObject = null;
         }
     }
 })

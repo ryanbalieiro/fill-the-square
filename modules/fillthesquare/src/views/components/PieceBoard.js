@@ -62,6 +62,7 @@ fts.PieceBoard = core.InteractiveNode.extend({
         for(let i = 0 ; i < this._pieces.length ; i++) {
             let piece = this._pieces[i];
             piece.cleanUpAndReset();
+            piece.setOpacity(255);
         }
     },
 

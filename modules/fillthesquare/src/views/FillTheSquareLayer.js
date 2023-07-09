@@ -320,6 +320,20 @@ fts.FillTheSquareLayer = core.GameLayer.extend({
     },
 
     /**
+     * @public
+     * @override
+     */
+    cancelDrag: function () {
+        this._stopDragAndResetPiece(true);
+
+        this._pieceBoard.finishItemPreview(this._itemDragFeedback);
+        this._tileGrid.updatePiecePreview(null);
+        this.setFocus(false, [this._pieceBoard, this._tileGrid]);
+
+        this._super();
+    },
+
+    /**
      * @private
      */
     _stopDragAndPlacePiece: function () {
@@ -334,8 +348,9 @@ fts.FillTheSquareLayer = core.GameLayer.extend({
 
     /**
      * @private
+     * @param {Boolean} [instant=false]
      */
-    _stopDragAndResetPiece: function () {
+    _stopDragAndResetPiece: function (instant) {
         if(this._draggingObject !== this._pieceDragFeedback)
             return;
 
@@ -345,8 +360,17 @@ fts.FillTheSquareLayer = core.GameLayer.extend({
 
         let touchedPiece = this._pieceBoard.getLastSelectedPiece();
         touchedPiece.setVisible(true);
-        touchedPiece.setScale(1.5);
-        touchedPiece.tweenToInitialPosition(this._pieceBoard.convertToNodeSpace(this._pieceDragFeedback.getPosition()));
+
+        if(!instant) {
+            touchedPiece.setScale(1.5);
+            touchedPiece.tweenToInitialPosition(this._pieceBoard.convertToNodeSpace(this._pieceDragFeedback.getPosition()));
+        }
+        else {
+            touchedPiece.setOpacity(255);
+            touchedPiece.setScale(1);
+            touchedPiece.setPosition(touchedPiece.getInitialPosition());
+        }
+
 
         if(touchedPiece.getModel() === this._tutorialTargetPieceModel) {
             this._hand.setVisible(true);
