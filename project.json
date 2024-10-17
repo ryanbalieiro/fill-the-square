@@ -24,8 +24,8 @@
         "selectable"        : {
             "themes"        : [
                 {"id": "theme-dark", "name": "Dark", "description": "Stylishly bold with a dark ambiance.", "price": 0},
-                {"id": "theme-purple", "name": "Purple", "description": "Elegantly adorned in vibrant purple shades.", "price": 3000},
-                {"id": "theme-blue", "name": "Celestial", "description": "Illuminated with a bright & airy atmosphere.", "price": 5000}
+                {"id": "theme-purple", "name": "Purple", "description": "Elegantly adorned in vibrant purple shades.", "price": 2000},
+                {"id": "theme-blue", "name": "Celestial", "description": "Illuminated with a bright & airy atmosphere.", "price": 4000}
             ]
         }
     },

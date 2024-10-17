@@ -1,16 +1,24 @@
-# Fill The Square
+# [<img src="readme-assets/logo.png"> Fill the Square](https://ryanbalieiro.github.io/fill-the-square/) by Ryan Balieiro
 
-A fully responsive open-source canvas game developed on Javascript, and powered by the Cocos2D-JS framework. It boasts a lightweight design, adjusts to any screen size and features an intuitive gameplay, making it super easy to learn and play.
+A fully responsive, open-source canvas game built with JavaScript and powered by the Cocos2D-JS framework. It's lightweight, adjusts to any screen size, and features intuitive gameplay, making it easy to pick up and enjoy.
 
-## Preview
-![alt tag1](screenshots/gameplay.png)
+![alt promo](readme-assets/promo.png)
 
-**[Play Live Preview](https://ryanbalieiro.github.io/fill-the-square/)**
+## [Live Preview](https://ryanbalieiro.github.io/fill-the-square/)
+
+Check out the live version of the game deployed **[here](https://ryanbalieiro.github.io/fill-the-square/)** on GitHub Pages.
+
+### Runtime Requirements
+
+- iOS 8.0+ for iPhone / iPad.
+- Android 3.0.0+ for Android.
+- OS X v10.9+.
+- Windows 7+.
 
 ## Status
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-agency/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-agency.svg)](https://www.npmjs.com/package/startbootstrap-agency)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+![Version](https://img.shields.io/badge/version-1.7.0-blue.svg)
+![Last Commit](https://img.shields.io/github/last-commit/ryanbalieiro/fill-the-square.svg)
 
 ## About
 
@@ -20,26 +28,24 @@ This game was created and is maintained by **[Ryan Balieiro](https://ryanbalieir
 
 The project architecture consists of two main modules:
 
-- **Core Module**: comprises a collection of versatile implementations intended for use in multiple games, encompassing generic implementations of menus, item shops, session management logic, API bridges, loaders, achievements, leaderboards, feedback animations, and more.
+- **Core Module**: This is a collection of reusable features that can be used in multiple games. It includes things like generic menus, item shops, session management, API connections, loaders, achievements, leaderboards, feedback animations, and more.
 
-- **FillTheSquare Module**: contains the specific implementation of the game features.
+- **FillTheSquare Module**: This contains the specific game features
 
-The game follows the **MVP (Model-View-Presenter)** architecture. Within each module, the following package groups can be found:
+The game uses the **MVP (Model-View-Presenter)** architecture. Each module is organized into the following groups:
 
-- **APIs**: These handle OS-related functionalities, providing access to features such as the native viewport.
-- **Helpers**: A set of utilities and auxiliary functions that can be accessed by multiple components within the architecture.
-- **Loaders**: Classes that are responsible for loading and unloading game resources.
-- **Managers**: Classes that handle tasks such as data synchronization and session management.
-- **Models**: The package that represents the game's data and business logic.
-- **Views**: The presentation layer consisting of user interface components.
-- **GameDelegate.js**: Acts as a centralized presenter, serving as an intermediary between the model and the view.
+- **APIs**: These manage OS-related tasks, like accessing the native viewport.
+- **Helpers**: A collection of utility functions that can be used across different parts of the project.
+- **Loaders**: Responsible for loading and unloading game resources.
+- **Managers**: Handle things like data synchronization and session management.
+- **Models**: Represents the game's data and business logic.
+- **Views**: Interface components that make up the presentation layer.
+- **GameDelegate.js**: Serves as the central presenter, acting as a bridge between the model and the view.
 
-### Runtime Requirements
+## Screenshots
 
-- iOS 8.0+ for iPhone / iPad.
-- Android 3.0.0+ for Android.
-- OS X v10.9+.
-- Windows 7+.
+![alt themes](readme-assets/screenshot-2.png)
+![alt features](readme-assets/screenshot-1.png)
 
 ## Copyright and License
 
