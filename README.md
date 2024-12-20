@@ -10,8 +10,8 @@ Check out the live version of the game deployed **[here](https://ryanbalieiro.gi
 
 ### Runtime Requirements
 
-- iOS 8.0+ for iPhone / iPad.
-- Android 3.0.0+ for Android.
+- iOS 9.0+ for iPhone / iPad.
+- Android 4.6.0+ for Android.
 - OS X v10.9+.
 - Windows 7+.
 
