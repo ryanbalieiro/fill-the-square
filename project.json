@@ -39,7 +39,7 @@
 
     "hashtag"               : "fillthesquare",
     "url"                   : "https://ryanbalieiro.github.io/fill-the-square",
-    "privacyPolicyUrl"      : "https://ryanbalieiro.com/games/fill-the-square/privacy-policy",
+    "privacyPolicyUrl"      : "https://ryanbalieiro.com/open-source/fill-the-square/privacy-policy",
 
     "debugFlags"  : {
         "ignorePersistence" : false,
