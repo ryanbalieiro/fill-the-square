@@ -437,7 +437,7 @@ core.GameDelegate = cc.Class.extend({
      * @private
      */
     _shareGame: function () {
-        cc.sys.openURL(`https://twitter.com/share?text=Play ${cc.game.config['title']} by Ryan Balieiro! It's addicting!&url=${cc.game.config['url']}&hashtags=game,addicted,${cc.game.config['hashtag']}`)
+        cc.sys.openURL(`https://x.com/share?text=Play ${cc.game.config['title']} by Ryan Balieiro! It's addicting!&url=${cc.game.config['url']}&hashtags=game,addicted,${cc.game.config['hashtag']}`)
     },
 
     /**
@@ -445,7 +445,7 @@ core.GameDelegate = cc.Class.extend({
      * @param {Number} score
      */
     _shareScore: function (score) {
-        cc.sys.openURL(`https://twitter.com/share?text=I've scored ${score} on ${cc.game.config['title']}! Can you beat me?&url=${cc.game.config['url']}&hashtags=game,addicted,${cc.game.config['hashtag']}`)
+        cc.sys.openURL(`https://x.com/share?text=I've scored ${score} on ${cc.game.config['title']}! Can you beat me?&url=${cc.game.config['url']}&hashtags=game,addicted,${cc.game.config['hashtag']}`)
     },
 
     /**

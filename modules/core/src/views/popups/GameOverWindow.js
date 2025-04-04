@@ -204,7 +204,7 @@ core.GameOverWindow = core.PopUpBoard.extend({
             this.sceneNotifier.dispatch(core.GameViewEvent.Types.REQUESTED_RESTART);
         }
         else if(button === this._btnTweet) {
-            this.sceneNotifier.dispatchAfter(0.1, core.GameViewEvent.Types.CLICKED_ON_SHARE_SCORE, this.gameManager.getScore())
+            this.sceneNotifier.dispatchAfter(0.1, core.GameViewEvent.Types.CLICKED_ON_SHARE_SCORE, this.userManager.getBestScore())
         }
     },
 
