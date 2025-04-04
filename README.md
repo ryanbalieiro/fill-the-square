@@ -49,4 +49,4 @@ The game uses the **MVP (Model-View-Presenter)** architecture. Each module is or
 
 ## Copyright and License
 
-Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE) license.
+Code released under the [MIT](https://github.com/ryanbalieiro/fill-the-square?tab=MIT-1-ov-file) license.

@@ -423,7 +423,7 @@ core.GameDelegate = cc.Class.extend({
      * @private
      */
     _openDeveloperPage: function () {
-        cc.sys.openURL("https://ryanbalieiro.com");
+        cc.sys.openURL(cc.game.config['developerUrl']);
     },
 
     /**
