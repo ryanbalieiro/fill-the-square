@@ -56,6 +56,8 @@ cc.game.onStart = function () {
             let delegateClass = cc.game.config['delegateClass'];
             core.__delegate = new namespace[delegateClass]();
             core.__delegate.init();
+
+            core.api.nativeViewport.showFullScreenLoader(true);
         });
     });
 }

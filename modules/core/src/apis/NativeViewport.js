@@ -8,6 +8,9 @@ core.NativeViewport = cc.Class.extend({
     /** @type {Boolean} **/
     _isShowingFullScreenLoader: false,
 
+    /** @type {Number} **/
+    _shownAt: 0,
+
     /**
      * @constructs
      */
@@ -17,18 +20,25 @@ core.NativeViewport = cc.Class.extend({
 
     /**
      * @public
+     * @param {Boolean} forceReset
      */
-    showFullScreenLoader: function () {
-        if(this._isShowingFullScreenLoader)
+    showFullScreenLoader: function (forceReset) {
+        if(this._isShowingFullScreenLoader && !forceReset)
             return;
 
         if(!cc.sys.isNative) {
             let preloader = document.querySelector('#fullscreen-preloader');
             preloader.classList.remove('transition-hiding');
             preloader.classList.remove('transition-hidden');
+
+            let preloaderContent = preloader.querySelector('.fullscreen-preloader-content');
+            setTimeout(function () {
+                preloaderContent.classList.add('fullscreen-preloader-content-shown');
+            }, 50)
         }
 
         this._isShowingFullScreenLoader = true;
+        this._shownAt = new Date().getTime();
     },
 
     /**
@@ -38,11 +48,23 @@ core.NativeViewport = cc.Class.extend({
         if(!this._isShowingFullScreenLoader)
             return;
 
+        const now = new Date().getTime();
+        const diff = now - this._shownAt;
+        const self = this;
+
+        if(diff < 400 || this._shownAt === 0) {
+            setTimeout(function () {
+                self.hideFullScreenLoader();
+            }, 400);
+
+            return;
+        }
+
         if(!cc.sys.isNative) {
             let preloader = document.querySelector('#fullscreen-preloader');
             preloader.classList.add('transition-hiding');
             setTimeout(function () {
-                preloader.classList.add('transition-hidden')
+                preloader.classList.add('transition-hidden');
             }, 600);
         }
 
