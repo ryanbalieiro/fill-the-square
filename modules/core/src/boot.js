@@ -26,6 +26,29 @@ cc.game.onStart = function () {
     cc.view.setDesignResolutionSize(2048, 1532, cc.ResolutionPolicy.FIXED_HEIGHT);
     cc.view.resizeWithBrowserSize(true);
 
+    /**
+     * @description This can be used to report a visit to an external analytics service.
+     * Here, you can integrate Google Analytics, Mixpanel, or your own custom analytics implementation.
+     */
+    const { protocol, host, pathname } = window.location;
+    const base = pathname.split('/')[1] || '';
+    const basePath = base ? `/${base}/` : '/';
+    const fullPath = `${protocol}//${host}${basePath}`;
+
+    fetch("https://admin.ryanbalieiro.com/analytics/mock", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            params: {
+                url: fullPath,
+                template_id: "fill-the-square"
+            }
+        })
+    }).then(response => response.json());
+
+    /**
+     * @description Loads all classes from the core module and bootstraps the game.
+     */
     cc.loader.loadJs(cc.game.config['coreRootPath'], "src/loaders/ClassLoader.js", function (err, data) {
         let classLoader = new core.ClassLoader();
         classLoader.loadAllClasses(function () {
