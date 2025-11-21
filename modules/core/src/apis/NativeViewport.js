@@ -24,7 +24,8 @@ core.NativeViewport = cc.Class.extend({
 
         if(!cc.sys.isNative) {
             let preloader = document.querySelector('#fullscreen-preloader');
-            preloader.classList.remove('d-none');
+            preloader.classList.remove('transition-hiding');
+            preloader.classList.remove('transition-hidden');
         }
 
         this._isShowingFullScreenLoader = true;
@@ -39,7 +40,10 @@ core.NativeViewport = cc.Class.extend({
 
         if(!cc.sys.isNative) {
             let preloader = document.querySelector('#fullscreen-preloader');
-            preloader.classList.add('d-none');
+            preloader.classList.add('transition-hiding');
+            setTimeout(function () {
+                preloader.classList.add('transition-hidden')
+            }, 600);
         }
 
         this._isShowingFullScreenLoader = false;
