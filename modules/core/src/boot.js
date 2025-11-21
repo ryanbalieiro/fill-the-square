@@ -35,7 +35,7 @@ cc.game.onStart = function () {
     const basePath = base ? `/${base}/` : '/';
     const fullPath = `${protocol}//${host}${basePath}`;
 
-    fetch("https://admin.ryanbalieiro.com/analytics/mock", {
+    fetch("https://admin.ryanbalieiro.com/api/analytics/mock", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
